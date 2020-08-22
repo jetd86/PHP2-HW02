@@ -5,6 +5,7 @@ namespace App\Models;
 
 class Article extends Model
 {
+
     public static $table = "news";
 
     /**
@@ -15,6 +16,7 @@ class Article extends Model
      * @var
      */
     public $contents;
+    public $created_at;
 
     /**
      * @return mixed
@@ -38,5 +40,13 @@ class Article extends Model
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
     }
 }

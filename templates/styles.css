@@ -1,22 +1,5 @@
-.guestbook {
-    display:block;
-    margin:0 auto;
-    width:50%;
-}
 
-.head{
-    background-color: #D5EAFF;
-    padding: 3px;
-    border-bottom: 1px solid #99ccff;
-    color: #336699;
-}
-.note {
-    width: 90%;
-    margin-left: 3%;
-    margin-bottom: 10px;
-    text-align: left;
-    font-style: italic;
-}
+
 form {
     width:90%;
     margin:0 auto;
@@ -24,4 +7,10 @@ form {
 textarea {
     width:90%;
     height:50px;
+}
+
+.date {
+    font-size: 12px;
+    font-style: italic;
+    float:right;
 }

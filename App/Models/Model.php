@@ -1,5 +1,5 @@
 <?php
-//Это вспомогательный класс, задача класса Model быть вспомогательным для других
+
 namespace App\Models;
 
 use App\DB;
@@ -20,7 +20,7 @@ abstract class Model
     public function __construct($data = [])
     {
         if (!empty($data)) {
-            $props = get_object_vars($this); // передаем исследемый объект через $this
+            $props = get_object_vars($this);
             foreach ($props as $name => $value) {
                 $this->$name = $data[$name];
             }
@@ -36,7 +36,7 @@ abstract class Model
     public static function findById($id)
     {
         $db = new DB();
-        $sql = "SELECT * FROM " . static::$table . " WHERE id = :id";
+        $sql = "SELECT * FROM " . static::$table . " WHERE " . static::$table. ".id = :id";
         $data = $db->query($sql, static::class, [':id' => $id]);
 
         if (!empty($data)) {
@@ -104,6 +104,9 @@ abstract class Model
         return $this->id ? $this->update() : $this->insert();
     }
 
+    /**
+     * @return bool
+     */
     public function delete(): bool
     {
         if (!isset($this->id)) return false;

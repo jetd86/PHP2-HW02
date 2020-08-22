@@ -14,8 +14,7 @@ class DB
      */
     public function __construct()
     {
-        $conf = new Config();
-
+        $conf = Config::getInstance();
         [$driver, $host, $port, $db_name, $user, $password] = $conf->data;
 
         $dsn = $driver . ':host=' . $host . ';port=' . $port . ';dbname=' . $db_name;
@@ -46,6 +45,10 @@ class DB
         return isset($class) ? $sth->fetchAll(\PDO::FETCH_CLASS, $class) : $sth->fetchAll();
     }
 
+
+    /**
+     * @return string
+     */
     public function getLastInsertedId()
     {
         return $this->DBH->lastInsertId();
