@@ -46,8 +46,6 @@ abstract class Model
     }
 
 
-    //Метод для реализации техники записи Active Record
-
     /**
      * @return bool
      */
@@ -97,10 +95,6 @@ abstract class Model
 
         return $db->execute($sql, $data);
     }
-
-//Реализуйте метод save(), который решит -
-// "новая" модель или нет и, в зависимости от этого, вызовет либо insert(), либо update().
-
 
     /**
      * @return bool
