@@ -55,7 +55,7 @@ abstract class Model
         $fields = [];
         $binds = [];
         foreach ($props as $name => $value) {
-            if ($name == 'id') continue;
+            if ($name == 'id' || $name == 'created_at') continue;
             $fields[] = $name;
             $binds[] = ":" . $name;
             $data[':' . $name] = $value;
@@ -82,7 +82,7 @@ abstract class Model
         $fields = [];
 
         foreach ($props as $name => $value) {
-            if ($name === 'id') continue;
+            if ($name === 'id' || $name == 'created_at') continue;
             $fields[] = $name . ' = ' . ':' . $name;
             $data[':' . $name] = $value;
         }

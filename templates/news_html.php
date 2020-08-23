@@ -7,11 +7,11 @@
                 if ($article){
                 foreach ($article as $a):?>
                     <div class="note">
-                        <div class="head"><a
-                                    href="<?php echo '/news/article.php?id=' . $a->getID(); ?>"><?php echo $a->getTitle() ?></a>
+                        <div class="head"><a href="<?php echo '/news/article.php?id=' . $a->id; ?>"><?php echo $a->title;?></a>
                         </div>
                     </div>
-                <?php endforeach; ?>
+                <?php
+                endforeach; ?>
             </div>
         </div>
     </div>
